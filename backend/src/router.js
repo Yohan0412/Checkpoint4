@@ -10,4 +10,8 @@ router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
+const testControllers = require("./controllers/testControllers");
+
+router.get("/good", testControllers.browse);
+
 module.exports = router;
