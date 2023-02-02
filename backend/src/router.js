@@ -12,6 +12,11 @@ router.delete("/items/:id", itemControllers.destroy);
 
 const testControllers = require("./controllers/testControllers");
 
-router.get("/good", testControllers.browse);
+router.get("/planete", testControllers.browse);
+router.get("/planete/:id", testControllers.read);
+
+const vehiculeControllers = require("./controllers/vehiculeContollers");
+
+router.get("/vehicule", vehiculeControllers.browse);
 
 module.exports = router;

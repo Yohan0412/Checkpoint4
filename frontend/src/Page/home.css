@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+}
+.home {
+  margin: 0;
+  background-color: black;
+  height: 1000px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 300px;
+  background-color: gray;
+}
+
+.titleD {
+  color: white;
+  font-size: 2rem;
+}
+
+.texte {
+  display: flex;
+  justify-content: center;
+  margin-top: 450px;
+}
+
+.desc {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.ajou {
+  color: white;
+  font-size: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+}

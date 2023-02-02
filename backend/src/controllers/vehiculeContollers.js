@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.planete
+  models.transport
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -13,7 +13,7 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.planete
+  models.transport
     .findById(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
