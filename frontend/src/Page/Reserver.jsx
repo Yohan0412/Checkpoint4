@@ -5,7 +5,11 @@ import instance from "../instance";
 
 function Reserver() {
   const [planets, setPlanets] = useState([]);
+  const [vehicule, setVehicule] = useState([]);
   const { id } = useParams();
+  const [filtre, setFilter] = useState(vehicule);
+  const [prix, setPrix] = useState("Choisir Moyen Transport !  /");
+  const [temps, setTemps] = useState("Choisir Moyen Transport ! /");
 
   useEffect(() => {
     instance
@@ -17,6 +21,35 @@ function Reserver() {
         console.error(err);
       });
   }, [id]);
+
+  useEffect(() => {
+    instance
+      .get(`/vehicule`)
+      .then((result) => {
+        setVehicule(result.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  const handleSelect = (e) => {
+    setFilter(
+      vehicule.filter((fus) => fus.id === parseInt(e.target.value, 10))
+    );
+
+    if (parseInt(e.target.value, 10) === 1) {
+      setPrix(planets.prix * 2);
+    } else if (parseInt(e.target.value, 10) === 2) {
+      setPrix(planets.prix * 5);
+    }
+
+    if (parseInt(e.target.value, 10) === 1) {
+      setTemps(planets.temp);
+    } else if (parseInt(e.target.value, 10) === 2) {
+      setTemps(planets.temp / 3);
+    }
+  };
 
   return (
     <div className="reserver">
@@ -37,10 +70,11 @@ function Reserver() {
             <strong>Distance :</strong> {planets.distance} km
           </ul>
           <ul className="i">
-            <strong>Temps :</strong> {planets.temp}jours
+            <strong>Temps :</strong> {temps} jours
           </ul>
+
           <ul className="i">
-            <strong>Prix :</strong> {planets.prix}
+            <strong>Prix :</strong> {prix} $
           </ul>
         </div>
       </div>
@@ -48,19 +82,23 @@ function Reserver() {
       <h1 className="moyen">Moyen de transport </h1>
 
       <div className="sel">
-        <select className="select" name="filtre" id="filtre">
-          <option value="">Choisir son moyen de transport</option>
-          <option value="favori">Fusée</option>
-          <option value="favori">Vaisseau AX-130</option>
+        <select
+          onChange={handleSelect}
+          className="select"
+          name="filtre"
+          id="filtre"
+        >
+          <option value="x">Choisir son moyen de transport</option>
+          {vehicule.map((veh) => (
+            <option value={veh.id}>{veh.nom}</option>
+          ))}
         </select>
       </div>
 
       <div className="imagevaisseaux">
-        <img
-          className="vaisseau"
-          alt="vaisseaux"
-          src="https://trustmyscience.com/wp-content/uploads/2022/02/vaisseau-spatial-starship-inquiete-competiteurs-couv-949x534.png.webp"
-        />
+        {filtre.map((fi) => (
+          <img className="vaisseau" alt="vaisseaux" src={fi.image} />
+        ))}
       </div>
 
       <div className="br">

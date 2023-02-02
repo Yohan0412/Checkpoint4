@@ -9,9 +9,9 @@ function Home() {
 
       <div className="texte">
         <p className="desc">
-          L'espace étant ouvert au grand public depuis 2025 nous vous proposon
-          des voyage dans lequelle vous pouvais découvrire toutee les richesse
-          de nos planetes
+          L'espace étant ouvert au grand public depuis 2025 nous vous proposons
+          des voyages dans lesquelle vous pouvais découvrir toutee les richesses
+          de notre systeme solaire !!!
         </p>
       </div>
 
