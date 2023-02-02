@@ -22,7 +22,7 @@ function Destination() {
 
   return (
     <div className="page">
-      <h1>Nos destinations </h1>
+      <h1 className="destination">Nos destinations </h1>
       <img alt="Fond" className="fond" src={galaxie} />
 
       <div className="planete">

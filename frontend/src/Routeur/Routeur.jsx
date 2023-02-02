@@ -5,6 +5,7 @@ import Home from "../Page/Home";
 import Destination from "../Page/destination";
 import Reserver from "../Page/Reserver";
 import Ajouter from "../Page/ajouter";
+import Footeur from "../Components/Footeur";
 
 function Routeur() {
   return (
@@ -15,6 +16,7 @@ function Routeur() {
         <Route path="/reserver/:id" element={<Reserver />} />
         <Route path="ajout" element={<Ajouter />} />
       </Routes>
+      <Footeur />
     </BrowserRouter>
   );
 }

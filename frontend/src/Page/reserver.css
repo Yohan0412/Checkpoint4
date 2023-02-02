@@ -2,44 +2,53 @@
   margin: 0;
 }
 
+.gros {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  color: #ffd700;
+}
+
 .reserver {
-  background-color: black;
-  width: 100%;
-  height: 180vh;
+  background-color: #483d8b;
+
+  height: auto;
 }
 
 .rectangle {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding-top: 8rem;
 }
 
+.photo {
+  display: flex;
+}
+
 .planetes {
-  height: 500px;
-  width: 500px;
+  height: 300px;
+  width: 350px;
+}
+
+.inf {
+  margin-left: 1rem;
+  font-size: 2rem;
 }
 
 .infos {
-  color: white;
-  width: 500px;
-  height: 500px;
-  background-color: gray;
+  color: #483d8b;
+  width: 350px;
+  height: 300px;
+  background-color: #deb887;
 }
 
 .select {
   height: 50px;
-
   width: 250px;
 }
 
-.sel {
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
 .br {
-  padding-top: 7rem;
+  padding-top: 5rem;
   display: flex;
   justify-content: center;
 }
@@ -56,15 +65,37 @@
 }
 
 .i {
-  padding-top: 3.5rem;
-  font-size: 1.5rem;
+  padding-top: 2rem;
+  font-size: 1.2rem;
 }
 
 .vaisseau {
-  height: 200px;
-  width: 300px;
+  height: 220px;
+  width: 350px;
 }
 
 .moyen {
+  padding-top: -2rem;
+  color: #ffd700;
+}
+
+.ff {
+  color: #ffd700;
+}
+
+.formu {
+  display: flex;
+  justify-content: center;
+}
+
+.label {
   padding-top: 2rem;
+}
+
+.rez {
+  color: #ffd700;
+  padding-top: 5rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
 }

@@ -3,36 +3,45 @@
 }
 .home {
   margin: 0;
-  background-color: black;
-  height: 1000px;
+  background-color: #483d8b;
+  height: 105vh;
 }
 
-h1 {
-  color: white;
+.fuse {
+  display: flex;
+  justify-content: center;
+}
+.fusee {
+  padding-top: 30px;
+}
+
+.marque {
+  color: #ffd700;
   text-align: center;
+  font-size: 3.5rem;
 }
 
 .button {
   display: flex;
   justify-content: center;
-  margin-top: 300px;
-  background-color: gray;
+  margin-top: 2rem;
+  background-color: #ffd700;
 }
 
 .titleD {
-  color: white;
+  color: black;
   font-size: 2rem;
 }
 
 .texte {
   display: flex;
   justify-content: center;
-  margin-top: 450px;
+  margin-top: 40px;
 }
 
 .desc {
-  color: white;
-  font-size: 1.5rem;
+  color: #a9a9a9;
+  font-size: 1.4rem;
 }
 
 .ajou {
