@@ -3,12 +3,21 @@ import "./home.css";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import fusee from "../assets/images/fusee.json";
+import NavBar from "../Components/Nav/Nav";
 
 function Home() {
   return (
     <div className="home">
-      <h1 className="marque">VOYAGE SPATIAL</h1>
-
+      <NavBar />
+      <div className="head">
+        <h1>👾</h1>
+        <h1 className="marque">VOYAGE SPATIAL</h1>
+        <Link to="/login">
+          <button type="button" className="loggg">
+            ⚙️ Login{" "}
+          </button>
+        </Link>
+      </div>
       <div className="texte">
         <p className="desc">
           L'espace étant ouvert au grand public depuis 2025 nous vous proposons

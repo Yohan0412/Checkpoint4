@@ -4,7 +4,7 @@
 .home {
   margin: 0;
   background-color: #483d8b;
-  height: 105vh;
+  height: 130vh;
 }
 
 .fuse {
@@ -15,10 +15,18 @@
   padding-top: 30px;
 }
 
+.head {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .marque {
   color: #ffd700;
-  text-align: center;
-  font-size: 3.5rem;
+}
+
+.loggg {
+  background-color: #ffd700;
+  font-size: 1rem;
 }
 
 .button {
@@ -40,8 +48,9 @@
 }
 
 .desc {
-  color: #a9a9a9;
-  font-size: 1.4rem;
+  color: white;
+  font-size: 1.3rem;
+  margin-top: 10rem;
 }
 
 .ajou {

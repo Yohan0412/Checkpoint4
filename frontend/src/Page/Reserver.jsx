@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import instance from "../instance";
 import "react-toastify/dist/ReactToastify.css";
+import NavBar from "../Components/Nav/Nav";
 
 function Reserver() {
   const [planets, setPlanets] = useState([]);
@@ -61,7 +62,7 @@ function Reserver() {
   return (
     <div className="reserver">
       <h1 className="gros"> 🚀 Direction {planets.nom} 🚀 </h1>
-
+      <NavBar />
       <div className="rectangle">
         <div className="photo">
           <img className="planetes" src={planets.image} alt="planetes" />

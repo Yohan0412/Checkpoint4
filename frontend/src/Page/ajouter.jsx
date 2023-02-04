@@ -1,104 +1,103 @@
 import "./ajouter.css";
+import { useState } from "react";
+import instance from "../instance";
+import NavBar from "../Components/Nav/Nav";
 
 export default function Ajouter() {
-  //   const [info, setInfo] = useState([]);
+  const [registerUser, setRegisterUser] = useState({
+    nom: "",
+    distance: parseInt("", 10),
+    temp: parseInt("", 10),
+    prix: parseInt("", 10),
+    image: "",
+  });
 
-  //   useEffect(() => {
-  //     instance
-  //       .get(`/address/${id}`)
-  //       .then((result) => {
-  //         setInfo(result.data);
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //       });
-  //   }, [id]);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setRegisterUser({ ...registerUser, [name]: value });
+  };
 
-  //   const handleChange = (e) => {
-  //     const { name, value } = e.target;
-  //     setInfo({ ...info, [name]: value });
-  //   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { nom, distance, temp, prix, image } = registerUser;
 
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     axios
-  //       .put(`${import.meta.env.VITE_BACKEND_URL}/address/${id}`, info, {
-  //         withCredentials: true,
-  //       })
-  //       .then((res) => {
-  //         console.warn(res);
-  //       })
-  //       .catch((err) =>
-  //         console.error(err, Notify.error("Mauvaises Informations! ❌"))
-  //       );
-  //     Notify.success("Vos informations ont été mises à jour!");
-  //   };
+    if (
+      nom === "" ||
+      distance === "" ||
+      temp === "" ||
+      prix === "" ||
+      image === ""
+    ) {
+      console.warn("Veuillez remplir tous les champs");
+      return;
+    }
+    instance
+      .post("/ajout-planets", registerUser)
+      .then(() => console.warn("Planete ajoutez avec succes ! 🎉"))
+      .catch((err) => console.error(err));
+  };
 
   return (
-    <section id="add">
-      {/* <form>   onSubmit={handleSubmit}  */}
-      <h1 className="yo">AJOUTER UNE PLANETES</h1>
-      <form>
-        <div className="esp">
-          <label>
-            Nom{" "}
+    <div className="add">
+      <main>
+        <NavBar />
+        <section className="register">
+          <h1 className="inscription">Inscription</h1>
+          <form
+            onSubmit={handleSubmit}
+            name="register-form"
+            className="register-form"
+          >
+            <label htmlFor="text">Nom planete :</label>
             <input
+              onChange={handleChange}
+              className="addd"
               type="text"
-              name="number_address"
-              //   value={info.number_address}
-              //   onChange={handleChange}
+              name="nom"
+              id="nom"
             />
-          </label>
-        </div>
-        <div className="esp">
-          <label>
-            URL image{" "}
+            <label htmlFor="distanc">Distance en km : </label>
             <input
+              className="addd"
+              type="number"
+              name="distance"
+              id="distance"
+              onChange={handleChange}
+            />
+            <label htmlFor="temp">Temps voyage : </label>
+            <input
+              className="addd"
+              type="number"
+              name="temp"
+              id="temp"
+              onChange={handleChange}
+            />
+            <label className="showPassword" htmlFor="prix">
+              Prix :
+            </label>
+            <input
+              className="addd"
+              type="number"
+              name="prix"
+              id="prix"
+              onChange={handleChange}
+            />
+            <label className="showPassword" htmlFor="image">
+              Image URL :
+            </label>
+            <input
+              className="addd"
               type="text"
-              name="number_address"
-              //   value={info.number_address}
-              //   onChange={handleChange}
+              name="image"
+              id="image"
+              onChange={handleChange}
             />
-          </label>
-        </div>
-        <label>
-          <div className="esp">
-            Distance{" "}
-            <input
-              type="number"
-              name="complementary_info"
-              // value={info.complementary_info}
-              // onChange={handleChange}
-            />
-          </div>
-        </label>
-
-        <div className="esp">
-          <label>
-            Temps voyage{" "}
-            <input
-              type="number"
-              name="zipcode"
-              //   value={info.zipcode}
-              //   onChange={handleChange}
-            />
-          </label>
-        </div>
-        <div className="esp">
-          <label>
-            Prix{" "}
-            <input
-              type="number"
-              name="country"
-              // value={info.country}
-              // onChange={handleChange}
-            />
-          </label>
-        </div>
-        <button className="sub" type="submit">
-          Enregistrer
-        </button>
-      </form>
-    </section>
+            <button className="addd" type="submit">
+              Register
+            </button>
+          </form>
+        </section>
+      </main>
+    </div>
   );
 }

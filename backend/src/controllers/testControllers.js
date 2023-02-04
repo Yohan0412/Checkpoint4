@@ -28,7 +28,39 @@ const read = (req, res) => {
     });
 };
 
+const add = (req, res) => {
+  const planete = req.body;
+
+  models.planete
+    .insert(planete)
+    .then(([result]) => {
+      res.location(`/planete/${result.insertId}`).sendStatus(201);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const suprm = (req, res) => {
+  models.planete
+    .delete(req.params.id)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.status(404).json({ error: "Couldn't delete offer!" });
+      } else {
+        res.status(204).json({ success: "Offer was successfuly deleted" });
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   browse,
   read,
+  add,
+  suprm,
 };

@@ -7,8 +7,8 @@ class ItemManager extends AbstractManager {
 
   insert(item) {
     return this.connection.query(
-      `insert into ${this.table} (title) values (?)`,
-      [item.title]
+      `insert into ${this.table} (nom, distance, temp, prix, image ) values (?,?,?,?,?)`,
+      [item.nom, item.distance, item.temp, item.prix, item.image]
     );
   }
 

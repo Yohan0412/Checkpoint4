@@ -1,18 +1,21 @@
-#add {
-  color: white;
-  background-color: black;
+.add {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
 }
 
-form {
+.addd {
+  width: 25%;
+}
+
+.register-form {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inscription {
   text-align: center;
-  padding-top: 5rem;
-}
-
-.esp {
-  padding-top: 2rem;
-}
-
-.sub {
-  margin-top: 2rem;
 }

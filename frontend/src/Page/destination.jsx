@@ -2,7 +2,6 @@ import "./destination.css";
 import Lottie from "lottie-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import galaxie from "../assets/galaxie.jpg";
 import moon from "../assets/images/Moon.json";
 import instance from "../instance";
 
@@ -23,7 +22,6 @@ function Destination() {
   return (
     <div className="page">
       <h1 className="destination">Nos destinations </h1>
-      <img alt="Fond" className="fond" src={galaxie} />
 
       <div className="planete">
         {planets.map((plan) => (

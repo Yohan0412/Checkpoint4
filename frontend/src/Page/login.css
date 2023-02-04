@@ -1,0 +1,46 @@
+.connexion {
+  background-color: #483d8b;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: white;
+}
+
+.texte-tit {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.input-name {
+  height: 1.5rem;
+  width: 15rem;
+}
+
+.input-mdp {
+  height: 1.5rem;
+  width: 15rem;
+}
+
+.pw-log {
+  color: #ffd700;
+}
+
+.mail-log {
+  color: #ffd700;
+}
+
+.last {
+  padding-top: 1rem;
+}
+
+.log {
+  padding-top: 1rem;
+}
+
+.form-log {
+  padding-top: 10rem;
+}
