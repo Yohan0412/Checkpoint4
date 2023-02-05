@@ -29,7 +29,7 @@ router.post("/login", userController.log);
 
 router.use(verify); // ROUTE PRIVEE
 
-router.post("/ajout-planets", testControllers.add);
-router.delete("/suprm-planete/:id", testControllers.suprm);
+router.post("/ajout-planets", verify, testControllers.add);
+router.delete("/suprm-planete/:id", verify, testControllers.suprm);
 
 module.exports = router;

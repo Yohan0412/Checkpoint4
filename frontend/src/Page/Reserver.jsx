@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./reserver.css";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 import instance from "../instance";
 import "react-toastify/dist/ReactToastify.css";
 import NavBar from "../Components/Nav/Nav";
@@ -54,9 +55,28 @@ function Reserver() {
     }
   };
 
+  const [name, setName] = useState("");
+
+  const nameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_dr6o0bd",
+      "template_ztzlzdm",
+      form.current,
+      "StsUHFSJwPz3tawo2"
+    );
+  };
+
   const notify = () =>
     toast(
-      `Merci Yohan ! Votre Voyage sur ${planets.nom} pour un total de ${prix} $ viens d'être accepté , un mail de confirmation vous sera envoyé !!! `
+      `Merci ${name} ! Votre Voyage sur ${planets.nom} pour un total de ${prix} $ viens d'être accepté , un mail de confirmation vous sera envoyé !!! `
     );
 
   return (
@@ -109,27 +129,28 @@ function Reserver() {
 
       <h1 className="rez"> 👨‍💻 RESERVEZ LE VOYAGE 👨‍💻 </h1>
       <div className="formu">
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <label>
             <h3 className="ff">Prenom :</h3>
-            <input type="text" />
+            <input onChange={nameChange} type="text" value={name} />
           </label>
           <label>
             <h3 className="ff">Mail :</h3>
             <input type="text" />
           </label>
+          <div className="br">
+            <button
+              type="submit"
+              onClick={() => {
+                notify();
+              }}
+            >
+              Reservez votre voyage
+            </button>
+          </div>
         </form>
       </div>
-      <div className="br">
-        <button
-          type="submit"
-          onClick={() => {
-            notify();
-          }}
-        >
-          Reservez votre voyage
-        </button>
-      </div>
+
       <ToastContainer />
     </div>
   );

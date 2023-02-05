@@ -13,6 +13,7 @@ a {
   font-size: 4rem;
   display: flex;
   justify-content: center;
+  color: #ffd700;
 }
 
 .input-name {

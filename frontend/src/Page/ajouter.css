@@ -2,7 +2,12 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 120vh;
+}
+
+.title-add {
+  text-align: center;
+  margin-top: 9rem;
 }
 
 .addd {
@@ -10,7 +15,7 @@
 }
 
 .register-form {
-  padding-top: 50px;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,4 +23,23 @@
 
 .inscription {
   text-align: center;
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+  padding-top: 7rem;
+}
+
+.titl-delete {
+  font-size: 1.5rem;
+}
+
+.supprimer {
+  margin-left: 3rem;
+}
+
+.selects {
+  width: 13rem;
+  margin-top: 1rem;
 }

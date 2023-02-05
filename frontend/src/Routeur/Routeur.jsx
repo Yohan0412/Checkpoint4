@@ -15,7 +15,7 @@ function Routeur() {
         <Route path="/destination" element={<Destination />} />
         <Route path="/reserver/:id" element={<Reserver />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/ajout" element={<Ajouter />} />
+        <Route path="/admin" element={<Ajouter />} />
       </Routes>
     </BrowserRouter>
   );

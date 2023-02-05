@@ -22,6 +22,7 @@
 
 .marque {
   color: #ffd700;
+  font-size: 3rem;
 }
 
 .loggg {
@@ -50,7 +51,7 @@
 .desc {
   color: white;
   font-size: 1.3rem;
-  margin-top: 10rem;
+  margin-top: 2rem;
 }
 
 .ajou {

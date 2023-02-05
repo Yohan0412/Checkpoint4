@@ -1,7 +1,9 @@
 import "./ajouter.css";
-import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import { useState, useEffect } from "react";
 import instance from "../instance";
 import NavBar from "../Components/Nav/Nav";
+import Notify from "../Util/notification";
 
 export default function Ajouter() {
   const [registerUser, setRegisterUser] = useState({
@@ -28,21 +30,59 @@ export default function Ajouter() {
       prix === "" ||
       image === ""
     ) {
-      console.warn("Veuillez remplir tous les champs");
+      Notify.error("Veuillez remplir tous les champs");
       return;
     }
     instance
       .post("/ajout-planets", registerUser)
-      .then(() => console.warn("Planete ajoutez avec succes ! 🎉"))
-      .catch((err) => console.error(err));
+      .then(() => {
+        Notify.success("La planete a étais ajoutée correctement !");
+      })
+      .catch((err) => {
+        console.error(err, toast.error("Une erreur c'est produite !"));
+      });
+  };
+
+  const [planete, setPlanete] = useState([]);
+
+  useEffect(() => {
+    instance
+      .get(`/planete`)
+      .then((result) => {
+        setPlanete(result.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  const [del, setDel] = useState();
+
+  const clickChangevalue = (e) => {
+    setDel(e.target.value);
+  };
+
+  const deleting = (e) => {
+    e.preventDefault();
+
+    instance
+      .delete(`/suprm-planete/${del}`)
+      .then(() => {
+        Notify.success("La planete a étais supprimer correctement !");
+      })
+      .catch((err) => {
+        console.error(err, toast.error("Mauvaises informations ! ❌"));
+      });
   };
 
   return (
     <div className="add">
       <main>
         <NavBar />
+        <ToastContainer />
+        <h1 className="inscription">ADMINISTRATION</h1>
         <section className="register">
-          <h1 className="inscription">Inscription</h1>
+          <h1 className="title-add">Ajouter une planete :</h1>
           <form
             onSubmit={handleSubmit}
             name="register-form"
@@ -97,6 +137,27 @@ export default function Ajouter() {
             </button>
           </form>
         </section>
+
+        <div className="delete">
+          <form onSubmit={deleting}>
+            <h1 className="titl-delete">Supprimer une planete :</h1>
+            <select
+              onChange={clickChangevalue}
+              className="selects"
+              name="filtre"
+              id="filtre"
+            >
+              <option>Choisir planete a supprimer </option>
+              {planete.map((supr) => (
+                <option value={supr.id}>{supr.nom}</option>
+              ))}
+            </select>
+
+            <button className="supprimer" type="submit">
+              supprimer
+            </button>
+          </form>
+        </div>
       </main>
     </div>
   );

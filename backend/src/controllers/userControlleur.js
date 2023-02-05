@@ -28,7 +28,7 @@ const brows = (req, res) => {
     });
 };
 
-const log = (req, res) => {
+const log = async (req, res) => {
   const { name, password } = req.body;
 
   models.user

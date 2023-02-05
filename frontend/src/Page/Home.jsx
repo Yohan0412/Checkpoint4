@@ -12,11 +12,7 @@ function Home() {
       <div className="head">
         <h1>👾</h1>
         <h1 className="marque">VOYAGE SPATIAL</h1>
-        <Link to="/login">
-          <button type="button" className="loggg">
-            ⚙️ Login{" "}
-          </button>
-        </Link>
+        <h1>👾</h1>
       </div>
       <div className="texte">
         <p className="desc">

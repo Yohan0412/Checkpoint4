@@ -20,7 +20,7 @@ export default function Login() {
     instance
       .post("/login", loginUser)
       .then((res) => sessionStorage.setItem("token", res.data.token))
-      .then(() => navigate("/ajout"))
+      .then(() => navigate("/admin"))
       .catch((err) => console.error(err));
   };
 
@@ -28,7 +28,7 @@ export default function Login() {
     <div className="connexion">
       <NavBar />
       <div className="box">
-        <p className="texte-tit">Connexion : </p>
+        <p className="texte-tit">Connexion </p>
         <form className="form-log" onSubmit={handleLogin}>
           <label className="mail-log" htmlFor="email">
             Pseudo :{" "}
