@@ -13,8 +13,11 @@ function NavBar() {
           <a className="menu-item" href="/destination">
             🛸 - Voir les Destinations
           </a>
+          <a className="menu-item" href="/inscription">
+            Inscription
+          </a>
           <a className="menu-item" href="/login">
-            ⚙️ - Admin
+            ⚙️ - Login
           </a>
         </Menu>
       </div>

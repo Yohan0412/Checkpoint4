@@ -1,4 +1,5 @@
 const { verify } = require("argon2");
+require("argon2");
 const models = require("../models");
 const { generateToken } = require("../jwt/jwt");
 
@@ -37,6 +38,7 @@ const log = async (req, res) => {
       if (!user) {
         return res.status(403).json({ error: "User not found" });
       }
+
       verify(user.password, password)
         .then((match) => {
           if (match) {
@@ -62,8 +64,19 @@ const log = async (req, res) => {
     });
 };
 
+const destroy = (req, res) => {
+  models.user.delete(req.params.id).then(([result]) => {
+    if (result.affectedRows === 0) {
+      res.status(404).json({ error: "Couldn't delete user!" });
+    } else {
+      res.status(204).json({ success: "User was successfuly deleted" });
+    }
+  });
+};
+
 module.exports = {
   add,
   brows,
   log,
+  destroy,
 };
