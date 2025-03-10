@@ -1,4 +1,117 @@
-.register {
-  background-color: white;
+.inscription{
+  background-color: #483d8b;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.register-box {
+  margin-top: 5%;
+  background-color: #C5A643;
+  display: flex;            
+  justify-content: center;  
+  align-items: center;       
+  height: 55vh;
+  width: 100vh;
+  margin-top: 10%;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  border: solid 5px black;
+  outline: none;
+  transition: box-shadow 0.5s ease;
+  animation: borderColorChange 3s infinite alternate;
+}
+
+.register-box:hover {
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.8);
+  transform: translateY(-3px);
+}
+
+@keyframes borderColorChange {
+  0% {
+    border-color: #C5A643; /* Bordure dorée */
+  }
+  100% {
+  border-color: #483d8b; /* Bordure jaune-orange */
+  }
+}
+
+.title-register{
+  display: flex;
+  justify-content: center;
+}
+
+
+label {
+  font-size: 25px;
+  margin-bottom: 7px;
+  color: #483d8b;
+}
+
+
+input {
+  height: 3vh;
+  width: 50vh;
+  margin-bottom: 7px;
+  border: 2px solid #C5A643; 
+  border-radius: 5px; 
+  background-color: #fff9e6; 
+  font-size: 16px; 
+  color: #333; 
+  outline: none; 
+  transition: all 0.3s ease;
+}
+
+input:hover {
+  background-color: #f0e1b8; 
+}
+
+input:focus {
+  border-color: #ffbb33; 
+  box-shadow: 0 0 8px rgba(255, 187, 51, 0.5); 
+  background-color: #fff3b3; 
+}
+
+input:disabled {
+  background-color: #f2f2f2; 
+  border: 2px solid #ddd; 
+  color: #aaa; 
+}
+
+.check {
+width: 10%;
+}
+
+.showPassword {
+  width: 100%;
+}
+
+.btn-register{
+  width: 150px;
+  height: 50px;
+  margin-top: 12px;
+  color: #fff;
+  background-color: #483d8b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+  transition: all 0.3s ease;
+}
+
+
+  .btn-register:hover {
+  background-color:#483d8b ;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus grande au survol */
+  transform: translateY(-3px); /* Effet de "décalage" 3D */
+}
+
+h1 {
+  color: #C5A643; 
+  font-size: 36px; 
+  text-align: center; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+  letter-spacing: 1px; 
+  font-weight: bold; 
+  margin-top: 50px;
 }
