@@ -23,11 +23,9 @@ router.get("/vehicule", vehiculeControllers.browse);
 const userController = require("./controllers/userControlleur");
 const hashPassword = require("./middlewares/hashPassword");
 
-
 router.post("/newuser", hashPassword, userController.add);
 router.get("/user", userController.brows);
 router.post("/login", userController.log);
-
 
 router.use(verify); // ROUTE PRIVEE
 

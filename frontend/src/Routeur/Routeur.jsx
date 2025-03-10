@@ -7,7 +7,6 @@ import Ajouter from "../Page/ajouter";
 import Login from "../Page/login";
 import Insciption from "../Page/inscription";
 
-
 function Routeur() {
   return (
     <BrowserRouter>

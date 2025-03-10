@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Notify from "../Util/notification";
 import instance from "../instance";
 import "./inscription.css";
 
@@ -21,18 +22,18 @@ export default function RegisterForm() {
     e.preventDefault();
     const { name, password, confirmPassword } = registerUser;
     if (password !== confirmPassword) {
-      console.log("les mdp correspondent pas !!!");
+      Notify.success("");
       return;
     }
     if (name === "" || password === "" || confirmPassword === "") {
-      console.log("remplir tout les champs !!!");
-      return;
+      Notify.success("");
     }
-    instance
-      .post("/newuser", registerUser)
-      .then(() => alert("Inscription réussie ! 🎉"))
-      .then(() => navigate("/login"))
-      .catch(() => alert("erreur "));
+
+    instance.post("/newuser", registerUser).then(() =>
+      Notify.success("Succes")
+        .then(() => navigate("/login"))
+        .catch(() => Notify.error("Erreur"))
+    );
   };
 
   const togglePassword = () => {
