@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import instance from "../instance";
@@ -25,38 +26,39 @@ export default function Login() {
   };
 
   return (
-    <div className="connexion">
+    <main className="connexion">
       <NavBar />
-      <div className="box">
-        <p className="texte-tit">Connexion </p>
-        <form className="form-log" onSubmit={handleLogin}>
-          <label className="mail-log" htmlFor="email">
-            Pseudo :{" "}
-          </label>
-          <input
-            className="input-name"
-            type="name"
-            name="name"
-            onChange={handleChangeLogin}
-            required
-          />
-          <br />
-          <br />
-          <label className="pw-log" htmlFor="mdp">
-            Password :{" "}
-          </label>
-          <input
-            className="input-mdp"
-            type="password"
-            name="password"
-            onChange={handleChangeLogin}
-            required
-          />
-          <div className="log">
-            <button type="submit">Se connecter</button>
-          </div>
-        </form>
-      </div>
-    </div>
+      <section>
+        <h1 className="titleConnexion">Connexion</h1>
+        <div className="boxConnexion">
+          <form className="form-log" onSubmit={handleLogin}>
+            <label className="mail-log" htmlFor="email">
+              Pseudo :
+            </label>
+            {/* Pseudo :{" "} */}
+            <input
+              className="input-name"
+              type="name"
+              name="name"
+              onChange={handleChangeLogin}
+              required
+            />
+            <label className="pw-log" htmlFor="mdp">
+              Password :
+            </label>
+            <input
+              className="input-mdp"
+              type="password"
+              name="password"
+              onChange={handleChangeLogin}
+              required
+            />
+            <button className="btn-login" type="submit">
+              Se connecter
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
   );
 }

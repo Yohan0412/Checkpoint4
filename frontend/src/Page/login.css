@@ -1,47 +1,90 @@
 .connexion {
   background-color: #483d8b;
+  display: flex;
+  justify-content: center;
   height: 100vh;
+}
+
+.boxConnexion {
+  margin-top: 5%;
+  background-color: #C5A643;
   display: flex;
-  justify-content: center;
-}
-
-a {
-  color: white;
-}
-
-.texte-tit {
-  font-size: 4rem;
-  display: flex;
-  justify-content: center;
-  color: #ffd700;
-}
-
-.input-name {
-  height: 1.5rem;
-  width: 15rem;
-}
-
-.input-mdp {
-  height: 1.5rem;
-  width: 15rem;
-}
-
-.pw-log {
-  color: #ffd700;
-}
-
-.mail-log {
-  color: #ffd700;
-}
-
-.last {
-  padding-top: 1rem;
-}
-
-.log {
-  padding-top: 1rem;
+  justify-content: center;             
+  align-items: center;       
+  height: 45vh;
+  width: 100vh;
+  margin-top: 10%;
+  /* border-radius: 8px;  */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  border: solid 20px black;
+  outline: none;
+  transition: box-shadow 0.5s ease;
+  border-image-slice: 1;
+  animation: neonBorder 2.5s linear infinite;
 }
 
 .form-log {
-  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.titleConnexion {
+display: flex;
+justify-content: center;
+}
+
+h1 {
+  align-items: center;
+}
+
+  .btn-login{
+    width: 150px;
+    height: 50px;
+    margin-top: 12px;
+    color: #fff;
+    background-color: #483d8b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease;
+  }
+  
+  
+    .btn-login:hover {
+    background-color:#483d8b ;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    transform: translateY(-3px);
+  }
+
+  label {
+    font-size: 25px;
+    margin-bottom: 7px;
+    color: #483d8b;
+  }
+
+  input {
+    height: 3vh;
+    width: 50vh;
+    margin-bottom: 7px;
+    border: 2px solid #C5A643; 
+    border-radius: 5px; 
+    background-color: #fff9e6; 
+    font-size: 16px; 
+    color: #333; 
+    outline: none; 
+    transition: all 0.3s ease;
+  }
+
+  input:focus {
+    border-color: #ffbb33; 
+    box-shadow: 0 0 8px rgba(255, 187, 51, 0.5); 
+    background-color: #fff3b3; 
+  }
+  
+  input:disabled {
+    background-color: #f2f2f2; 
+    border: 2px solid #ddd; 
+    color: #aaa; 
+  }

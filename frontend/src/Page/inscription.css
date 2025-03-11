@@ -14,12 +14,13 @@
   height: 55vh;
   width: 100vh;
   margin-top: 10%;
-  border-radius: 8px; 
+  /* border-radius: 8px;  */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-  border: solid 5px black;
+  border: solid 20px black;
   outline: none;
   transition: box-shadow 0.5s ease;
-  animation: borderColorChange 3s infinite alternate;
+  border-image-slice: 1;
+  animation: neonBorder 2.5s linear infinite;
 }
 
 .register-box:hover {
@@ -27,14 +28,15 @@
   transform: translateY(-3px);
 }
 
-@keyframes borderColorChange {
-  0% {
-    border-color: #C5A643; /* Bordure dorée */
+@keyframes neonBorder {
+
+  0% {border-image-source: linear-gradient(0deg, #C5A643, #483d8b);}
+  25% {border-image-source: linear-gradient(90deg, #C5A643, #483d8b);}
+  50% {border-image-source: linear-gradient(180deg, #C5A643, #483d8b);}
+  75% {border-image-source: linear-gradient(270deg, #C5A643, #483d8b);}
+  100% {border-image-source: linear-gradient(360deg, #C5A643, #483d8b);}
   }
-  100% {
-  border-color: #483d8b; /* Bordure jaune-orange */
-  }
-}
+  
 
 .title-register{
   display: flex;
@@ -95,15 +97,15 @@ width: 10%;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   transition: all 0.3s ease;
 }
 
 
   .btn-register:hover {
   background-color:#483d8b ;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus grande au survol */
-  transform: translateY(-3px); /* Effet de "décalage" 3D */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-3px); 
 }
 
 h1 {

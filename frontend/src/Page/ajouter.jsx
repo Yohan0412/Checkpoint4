@@ -80,15 +80,18 @@ export default function Ajouter() {
       <main>
         <NavBar />
         <ToastContainer />
-        <h1 className="inscription">ADMINISTRATION</h1>
-        <section className="register">
-          <h1 className="title-add">Ajouter une planete :</h1>
+        <h1 className="title-admin">ADMINISTRATION</h1>
+
+        <section className="add-planete">
+          <h1 className="title-add-planete">Ajouter une planete :</h1>
           <form
             onSubmit={handleSubmit}
             name="register-form"
-            className="register-form"
+            className="register-form-planete"
           >
-            <label htmlFor="text">Nom planete :</label>
+            <label className="donnee-planete" htmlFor="text">
+              Nom planete :
+            </label>
             <input
               onChange={handleChange}
               className="addd"
@@ -96,7 +99,9 @@ export default function Ajouter() {
               name="nom"
               id="nom"
             />
-            <label htmlFor="distanc">Distance en km : </label>
+            <label className="donnee-planete" htmlFor="distanc">
+              Distance en km :{" "}
+            </label>
             <input
               className="addd"
               type="number"
@@ -104,7 +109,9 @@ export default function Ajouter() {
               id="distance"
               onChange={handleChange}
             />
-            <label htmlFor="temp">Temps voyage : </label>
+            <label className="donnee-planete" htmlFor="temp">
+              Temps voyage :{" "}
+            </label>
             <input
               className="addd"
               type="number"
@@ -112,7 +119,7 @@ export default function Ajouter() {
               id="temp"
               onChange={handleChange}
             />
-            <label className="showPassword" htmlFor="prix">
+            <label className="donnee-planete" htmlFor="prix">
               Prix :
             </label>
             <input
@@ -122,7 +129,7 @@ export default function Ajouter() {
               id="prix"
               onChange={handleChange}
             />
-            <label className="showPassword" htmlFor="image">
+            <label className="donnee-planete" htmlFor="image">
               Image URL :
             </label>
             <input
@@ -132,7 +139,7 @@ export default function Ajouter() {
               id="image"
               onChange={handleChange}
             />
-            <button className="addd" type="submit">
+            <button className="btn-add-planete" type="submit">
               Register
             </button>
           </form>

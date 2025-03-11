@@ -1,45 +1,59 @@
 .add {
-  background-color: white;
+  height: 100%;
+  background-color: #483d8b;
   display: flex;
   flex-direction: column;
-  height: 120vh;
+  justify-content: center;
+  align-items: center;
 }
 
-.title-add {
-  text-align: center;
-  margin-top: 9rem;
+.add-planete {
+  margin-top: 20%;
+  height: auto;
+  width: 100%;
+  background-color: #2A1A7E;
+  border-radius: 8px;
+  border: 5px solid black;
+  box-shadow: 10px 10px 15px black;
+  border-image-slice: 1;
+  animation: neonBorder 3s linear infinite;
 }
 
-.addd {
-  width: 25%;
-}
 
-.register-form {
-  margin-top: 1rem;
+@keyframes neonBorder {
+
+  0% {border-image-source: linear-gradient(0deg, black, white);}
+  25% {border-image-source: linear-gradient(90deg, black, white);}
+  50% {border-image-source: linear-gradient(180deg, black, white);}
+  75% {border-image-source: linear-gradient(270deg, black, white);}
+  100% {border-image-source: linear-gradient(360deg, black, white);}
+  }
+
+.register-form-planete {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.inscription {
-  text-align: center;
+.donnee-planete {
+color: gray;
+padding-top: 10px;
 }
 
-.delete {
-  display: flex;
-  justify-content: center;
-  padding-top: 7rem;
+.title-add-planete {
+  margin-top: 0;
 }
 
-.titl-delete {
-  font-size: 1.5rem;
+.btn-add-planete {
+  width: 150px;
+  height: 50px;
+  margin-top: 12px;
+  color: #fff;
+  background-color: #483d8b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
 }
 
-.supprimer {
-  margin-left: 3rem;
-}
-
-.selects {
-  width: 13rem;
-  margin-top: 1rem;
-}
