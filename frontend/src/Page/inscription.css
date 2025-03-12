@@ -117,3 +117,8 @@ h1 {
   font-weight: bold; 
   margin-top: 50px;
 }
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}

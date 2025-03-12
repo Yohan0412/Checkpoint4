@@ -81,49 +81,49 @@ function Reserver() {
 
   return (
     <div className="reserver">
-      <h1 className="gros"> 🚀 Direction {planets.nom} 🚀 </h1>
       <NavBar />
+      <h1 className="gros"> 🚀 Direction {planets.nom} 🚀 </h1>
       <div className="rectangle">
-        <div className="photo">
-          <img className="planetes" src={planets.image} alt="planetes" />
-
-          <div className="infos">
-            <h1 className="inf">
-              <bold>Infos : </bold>
-            </h1>
-            <ul className="i">
-              <strong>Destination : </strong> {planets.nom}
-            </ul>
-            <ul className="i">
-              <strong>Distance :</strong> {planets.distance} km
-            </ul>
-            <ul className="i">
-              <strong>Temps :</strong> {temps} jours
-            </ul>
-
-            <ul className="i">
-              <strong>Prix :</strong> {prix} $
-            </ul>
+        <div className="haut">
+          <div className="gene-planete">
+            <img className="img-planetes" src={planets.image} alt="planetes" />
+          </div>
+          <div className="gen-transport">
+            <div className="imagevaisseaux">
+              {filtre.map((fi) => (
+                <img className="img-vaisseau" alt="vaisseaux" src={fi.image} />
+              ))}
+              <select
+                onChange={handleSelect}
+                className="select"
+                name="filtre"
+                id="filtre"
+              >
+                <option value="x">Choisir son moyen de transport</option>
+                {vehicule.map((veh) => (
+                  <option value={veh.id}>{veh.nom}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
+        <div className="infos">
+          <h1 className="inf">
+            <bold>Infos : </bold>
+          </h1>
+          <ul className="i">
+            <strong>Destination : </strong> {planets.nom}
+          </ul>
+          <ul className="i">
+            <strong>Distance :</strong> {planets.distance} km
+          </ul>
+          <ul className="i">
+            <strong>Temps :</strong> {temps} jours
+          </ul>
 
-        <div className="sel">
-          <select
-            onChange={handleSelect}
-            className="select"
-            name="filtre"
-            id="filtre"
-          >
-            <option value="x">Choisir son moyen de transport</option>
-            {vehicule.map((veh) => (
-              <option value={veh.id}>{veh.nom}</option>
-            ))}
-          </select>
-          <div className="imagevaisseaux">
-            {filtre.map((fi) => (
-              <img className="vaisseau" alt="vaisseaux" src={fi.image} />
-            ))}
-          </div>
+          <ul className="i">
+            <strong>Prix :</strong> {prix} $
+          </ul>
         </div>
       </div>
 

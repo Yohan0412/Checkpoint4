@@ -2,7 +2,6 @@
   height: 100%;
   background-color: #483d8b;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -57,3 +56,45 @@ padding-top: 10px;
   transition: all 0.3s ease;
 }
 
+.form-suppr-planete {
+  width: 100%;
+  background-color: #2A1A7E;
+  border-radius: 8px;
+  border: 5px solid black;
+  box-shadow: 10px 10px 15px black;
+  border-image-slice: 1;
+  animation: neonBorder 3s linear infinite;
+}
+
+.delete {
+  margin-top: 20%;
+  height: 200px;
+}
+
+
+.selects {
+  margin-top: 5%;
+  height: 50px;
+  border: none;
+  color: #C5A643;
+  background-color: #2A1A7E;
+  margin-top: auto;
+}
+
+.supprimer {
+  width: 150px;
+  height: 50px;
+  margin-top: 12px;
+  color: #fff;
+  background-color: #483d8b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
+  color: #C5A643;
+}
+
+.title-delete {
+  margin-top: 0;
+}

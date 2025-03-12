@@ -19,6 +19,7 @@ router.get("/planete/:id", testControllers.read);
 const vehiculeControllers = require("./controllers/vehiculeContollers");
 
 router.get("/vehicule", vehiculeControllers.browse);
+router.get("/transport/:id", vehiculeControllers.read);
 
 const userController = require("./controllers/userControlleur");
 const hashPassword = require("./middlewares/hashPassword");
@@ -29,8 +30,9 @@ router.post("/login", userController.log);
 
 router.use(verify); // ROUTE PRIVEE
 
+router.delete("/delete-vehicule/:id", verify, vehiculeControllers.destroy);
 router.post("/ajout-planets", verify, testControllers.add);
 router.delete("/suprm-planete/:id", verify, testControllers.suprm);
 router.delete("/user/:id", verify, userController.destroy);
-
+router.post("/ajoutvehicule", verify, vehiculeControllers.add);
 module.exports = router;

@@ -1,101 +1,50 @@
-* {
-  margin: 0;
-}
-
-.gros {
-  font-size: 4rem;
-  display: flex;
-  justify-content: center;
-  color: #ffd700;
-}
-
 .reserver {
+  height: 100%;
+  width: 100%;
   background-color: #483d8b;
-
-  height: 125vh;
 }
 
 .rectangle {
+  height: auto;
+  width: 100%;
+  background-color: #2A1A7E;
+}
+
+.img-planetes {
+  height: 100%;
+  width: 49vh;
+}
+
+.img-vaisseau {
+  height: 100%;
+  width: 49vh;
+}
+
+.haut {
+  height: auto;
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  padding-top: 8rem;
+  justify-content: space-between;
 }
 
-.photo {
+.gene-planete {
+  height: auto;
+  width: 50vh;
   display: flex;
 }
 
-.planetes {
-  height: 300px;
-  width: 350px;
-}
-
-.inf {
-  margin-left: 1rem;
-  font-size: 2rem;
+.gen-transport {
+  height: auto;
+  width: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .infos {
-  color: #483d8b;
-  width: 350px;
-  height: 300px;
-  background-color: #deb887;
-}
-
-.select {
-  height: 50px;
-  width: 250px;
-}
-
-.br {
-  padding-top: 5rem;
   display: flex;
-  justify-content: center;
-}
-
-.imagevaisseaux {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-}
-
-.reservez {
-  height: 50px;
-  width: 200px;
-}
-
-.i {
-  padding-top: 2rem;
-  font-size: 1.2rem;
-}
-
-.vaisseau {
-  height: 220px;
-  width: 350px;
-}
-
-.moyen {
-  padding-top: -2rem;
-  color: #ffd700;
-}
-
-.ff {
-  color: #ffd700;
-}
-
-.formu {
-  display: flex;
-  justify-content: center;
-}
-
-.label {
-  padding-top: 2rem;
-}
-
-.rez {
-  color: #ffd700;
-  padding-top: 5rem;
-  height: auto;
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
 }

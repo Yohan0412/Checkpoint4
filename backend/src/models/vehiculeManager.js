@@ -7,8 +7,8 @@ class ItemManager extends AbstractManager {
 
   insert(item) {
     return this.connection.query(
-      `insert into ${this.table} (title) values (?)`,
-      [item.title]
+      `insert into ${this.table} (nom, image) values (?,?)`,
+      [item.nom, item.image]
     );
   }
 
@@ -16,6 +16,13 @@ class ItemManager extends AbstractManager {
     return this.connection.query(
       `update ${this.table} set title = ? where id = ?`,
       [item.title, item.id]
+    );
+  }
+
+  findByid(id) {
+    return this.connection.query(
+      `select id, name, image  from ${this.table} where id = ?`,
+      [id]
     );
   }
 }
