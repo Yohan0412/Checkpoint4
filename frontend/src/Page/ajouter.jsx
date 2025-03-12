@@ -129,6 +129,32 @@ export default function Ajouter() {
       });
   };
 
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    instance
+      .get(`/user`)
+      .then((result) => {
+        setUser(result.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  const deletingUser = (e) => {
+    e.preventDefault();
+
+    instance
+      .delete(`/delete-user/${del}`)
+      .then(() => {
+        Notify.success("L'utilisateur a étais supprimer correctement !");
+      })
+      .catch((err) => {
+        console.error(err, toast.error("Mauvaises informations ! ❌"));
+      });
+  };
+
   return (
     <div className="add">
       <main>
@@ -252,16 +278,36 @@ export default function Ajouter() {
         </div>
         <div className="delete-vehicule">
           <form className="form-suppr-planete" onSubmit={deletingTransport}>
-            <h1 className="title-delete">Supprimer une planete :</h1>
+            <h1 className="title-delete">Supprimer un véhicule :</h1>
             <select
               onChange={clickChangevalue}
               className="selects"
               name="filtre"
               id="filtre"
             >
-              <option>Choisir planete a supprimer </option>
+              <option>Choisir un véhicule à supprimer </option>
               {vehicule.map((supr) => (
                 <option value={supr.id}>{supr.nom}</option>
+              ))}
+            </select>
+
+            <button className="supprimer" type="submit">
+              supprimer
+            </button>
+          </form>
+        </div>
+        <div className="delete">
+          <form className="form-suppr-planete" onSubmit={deletingUser}>
+            <h1 className="title-delete">Supprimer un utilisateur :</h1>
+            <select
+              onChange={clickChangevalue}
+              className="selects"
+              name="filtre"
+              id="filtre"
+            >
+              <option>Choisir un utilisateur à supprimer </option>
+              {user.map((supr) => (
+                <option value={supr.id}>{supr.name}</option>
               ))}
             </select>
 

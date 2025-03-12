@@ -42,15 +42,15 @@ function Reserver() {
       vehicule.filter((fus) => fus.id === parseInt(e.target.value, 10))
     );
 
-    if (parseInt(e.target.value, 10) === 1) {
+    if (parseInt(e.target.value, 10) === 2) {
       setPrix(planets.prix * 2);
-    } else if (parseInt(e.target.value, 10) === 2) {
+    } else if (parseInt(e.target.value, 10) === 5) {
       setPrix(planets.prix * 5);
     }
 
-    if (parseInt(e.target.value, 10) === 1) {
+    if (parseInt(e.target.value, 10) === 2) {
       setTemps(planets.temp);
-    } else if (parseInt(e.target.value, 10) === 2) {
+    } else if (parseInt(e.target.value, 10) === 5) {
       setTemps(planets.temp / 3);
     }
   };
@@ -82,11 +82,29 @@ function Reserver() {
   return (
     <div className="reserver">
       <NavBar />
-      <h1 className="gros"> 🚀 Direction {planets.nom} 🚀 </h1>
+      <h1 className="dest-utilisateur"> 🚀 Direction {planets.nom} 🚀 </h1>
       <div className="rectangle">
         <div className="haut">
           <div className="gene-planete">
             <img className="img-planetes" src={planets.image} alt="planetes" />
+          </div>
+          <div className="infos">
+            <h1 className="inf">
+              <bold>Information : </bold>
+            </h1>
+            <ul className="txt">
+              <strong>Destination : </strong> {planets.nom}
+            </ul>
+            <ul className="txt">
+              <strong>Distance :</strong> {planets.distance} km
+            </ul>
+            <ul className="txt">
+              <strong>Temps :</strong> {temps} jours
+            </ul>
+
+            <ul className="txt">
+              <strong>Prix :</strong> {prix} $
+            </ul>
           </div>
           <div className="gen-transport">
             <div className="imagevaisseaux">
@@ -107,35 +125,16 @@ function Reserver() {
             </div>
           </div>
         </div>
-        <div className="infos">
-          <h1 className="inf">
-            <bold>Infos : </bold>
-          </h1>
-          <ul className="i">
-            <strong>Destination : </strong> {planets.nom}
-          </ul>
-          <ul className="i">
-            <strong>Distance :</strong> {planets.distance} km
-          </ul>
-          <ul className="i">
-            <strong>Temps :</strong> {temps} jours
-          </ul>
-
-          <ul className="i">
-            <strong>Prix :</strong> {prix} $
-          </ul>
-        </div>
       </div>
-
       <h1 className="rez"> 👨‍💻 RESERVEZ LE VOYAGE 👨‍💻 </h1>
-      <div className="formu">
+      <div className="reservez">
         <form ref={form} onSubmit={sendEmail}>
           <label>
-            <h3 className="ff">Prenom :</h3>
+            <h3 className="txt-for">Prenom :</h3>
             <input onChange={nameChange} type="text" value={name} />
           </label>
           <label>
-            <h3 className="ff">Mail :</h3>
+            <h3 className="txt-for">Mail :</h3>
             <input type="text" />
           </label>
           <div className="br">

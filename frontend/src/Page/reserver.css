@@ -1,4 +1,5 @@
 .reserver {
+  margin: 0 auto;
   height: 100%;
   width: 100%;
   background-color: #483d8b;
@@ -6,23 +7,24 @@
 
 .rectangle {
   height: auto;
-  width: 100%;
+  width: 99.5%;
   background-color: #2A1A7E;
+  border: 5px solid #C5A643; 
 }
 
 .img-planetes {
   height: 100%;
-  width: 49vh;
+  width: 50vh;
 }
 
 .img-vaisseau {
   height: 100%;
-  width: 49vh;
+  width: 50vh;
 }
 
 .haut {
   height: auto;
-  width: 100%;
+  width: 100%; 
   display: flex;
   justify-content: space-between;
 }
@@ -47,4 +49,31 @@
   align-items: center;
   text-align: center;
   font-size: 25px;
+}
+
+.inf {
+ font-size: 45px;
+ text-decoration: underline;
+}
+
+.txt {
+  font-size: 30px;
+  padding-top: 10px;
+  color: #C5A643;
+  text-shadow: 2px 2px 5px #C5A643;
+}
+
+.dest-utilisateur {
+  font-size: 100px;
+}
+
+.reserver {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.txt-for {
+  color: #C5A643;
 }

@@ -35,4 +35,6 @@ router.post("/ajout-planets", verify, testControllers.add);
 router.delete("/suprm-planete/:id", verify, testControllers.suprm);
 router.delete("/user/:id", verify, userController.destroy);
 router.post("/ajoutvehicule", verify, vehiculeControllers.add);
+router.delete("/delete-user/:id", userController.destroy);
+
 module.exports = router;
