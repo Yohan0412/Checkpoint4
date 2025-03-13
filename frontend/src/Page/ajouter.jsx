@@ -155,6 +155,10 @@ export default function Ajouter() {
       });
   };
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="add">
       <main>
@@ -291,7 +295,7 @@ export default function Ajouter() {
               ))}
             </select>
 
-            <button className="supprimer" type="submit">
+            <button className="supprimer" onClick={handleChange} type="submit">
               supprimer
             </button>
           </form>
@@ -311,7 +315,7 @@ export default function Ajouter() {
               ))}
             </select>
 
-            <button className="supprimer" type="submit">
+            <button className="supprimer" onClick={handleRefresh} type="submit">
               supprimer
             </button>
           </form>
